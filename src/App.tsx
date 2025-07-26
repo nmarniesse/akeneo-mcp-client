@@ -1,11 +1,10 @@
 import React from 'react'
 import { useChat } from './hooks/useChat';
+import { AdjustableTextarea } from './components/AdjustableTextarea';
 
 function App() {
   const [input, setInput] = React.useState<string>('');
   const { messages, isLoading, submit } = useChat();
-
-  console.log('messages', messages);
 
   const handleSubmit = (form: React.FormEvent<HTMLFormElement>) => {
     form.preventDefault();
@@ -20,7 +19,7 @@ function App() {
           {messages.map((message, index) => (
             <tr key={index}>
               <td><strong>{message.role === 'user' ? 'User' : 'AI'}</strong></td>
-              <td>{message.content}</td>
+              <td><AdjustableTextarea text={message.content} /></td>
             </tr>
           ))}
         </tbody>
@@ -29,7 +28,7 @@ function App() {
       {isLoading && <div>Loading...</div>}
       <br/><br/>
       <form onSubmit={handleSubmit}>
-        <input name="prompt" value={input} onChange={(event) => setInput(event.target.value)} disabled={isLoading} />
+        <input style={{width: '800px'}} name="prompt" value={input} onChange={(event) => setInput(event.target.value)} disabled={isLoading} />
         <button type="submit">Submit</button>
       </form>
     </>
