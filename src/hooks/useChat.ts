@@ -1,4 +1,4 @@
-import { createOpenAI, type OpenAIProvider } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-sdk/openai';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { experimental_createMCPClient, generateText, tool, type ToolSet } from 'ai';
 import { useEffect, useState } from 'react';
