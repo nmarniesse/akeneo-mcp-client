@@ -31,7 +31,11 @@ const weatherTool = tool({
   }),
 });
 
-const context = `You are a helpful assistant. You can answer questions and do action about the software Akeneo PIM based on the user's input. You can use the MCP tools to information for this software.`;
+const context = `You are a helpful assistant. You can answer questions and do action about the software Akeneo PIM based on the user's input.
+You must use the MCP tools to get API documentation for this software.
+To search entities based on a specific criteria, you must use the MCP tools to get information about how to use filters and search queries.
+Try to execute the command yourself. If you can't, try to explain which information is wrong and which is missing.
+`;
 
 const useChat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
