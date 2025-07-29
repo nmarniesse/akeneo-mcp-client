@@ -35,6 +35,7 @@ const context = `You are a helpful assistant. You can answer questions and do ac
 You must use the MCP tools to get API documentation for this software.
 To search entities based on a specific criteria, you must use the MCP tools to get information about how to use filters and search queries.
 Try to execute the command yourself. If you can't, try to explain which information is wrong and which is missing.
+For API with methods that modify resources, like POST, PATCH, or DELETE, ask the user for confirmation before proceeding by explaining the changes and impacts.
 `;
 
 const useChat = () => {
