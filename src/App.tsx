@@ -17,10 +17,11 @@ function App() {
     if (inputRef.current) {
       inputRef.current.focus();
     }
+    window.scrollTo(0, document.body.scrollHeight);
   }, [messages]);
   
   return (
-    <>
+    <div style={{margin: '20px'}}>
       <table>
         <tbody>
           {messages.map((message, index) => (
@@ -42,7 +43,7 @@ function App() {
       </table>
 
       {isLoading && <div>Loading...</div>}
-    </>
+    </div>
   );
 }
 
